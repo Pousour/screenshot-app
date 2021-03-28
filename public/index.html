@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Screenshot</title>
+     <link rel="shortcut icon" href="#">
+ </head>
+ <body>
+     <form>
+         <input type="text" placeholder="url ..." id="url"></input>
+         <input type="button" onclick="/*getUrl(),*/ reload()" id="submit" value="Search">
+     </form>
+     <script>
+         /*async function getUrl() {
+            var url = document.getElementById("url").value;
+            const data = {url};
+            console.log(data)
+            const options = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data),
+                }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json);
+
+        }  */
+
+        function reload() {
+            var url = document.getElementById("url").value;
+            var newUrl = window.location.href + "screenshot?url=" + url;
+            window.location.replace(newUrl);
+            console.log(newUrl)
+        }
+
+     </script>
+ </body>
+ </html>
